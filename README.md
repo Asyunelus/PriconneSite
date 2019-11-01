@@ -32,7 +32,7 @@ node.js 설치가 완료되면 해당 프로젝트를 다운받아서 새로 폴
 server/routes/database/config.js
 ```
 해당 경로에 있는 Database User 및 Database Password 수정을 진행합니다. (되도록이면 특정 table 읽기 권한만 가지게 하면 좋음)
-추가적으로 sql 폴더 안에 있는 Mysql 쿼리문을 직접 쿼리해주시면 각종 테이블들이 자동으로 생성됩니다.  
+추가적으로 [sql 폴더 안에 있는 Mysql 쿼리문](https://github.com/Asyunelus/PriconneSite/blob/master/sql/prepare.sql)을 직접 쿼리해주시면 각종 테이블들이 자동으로 생성됩니다.  
 
 마지막으로 설정이 끝났으면 npm start 명령어로 시작할 수 있습니다.  
 
