@@ -10,11 +10,30 @@
   
 Priconne Clanbattle Website (React + Express.js)
 
-## 기본 설정법
+## 설치 방법
+먼저 node.js 설치를 진행합니다.  
+### Windows
+[Nodejs.org에서 설치하기](https://nodejs.org/ko/download/)  
+다운받은 후 설치하시면 됩니다.  
+
+### Linux
+```
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+```
+
+### Node.js 설치 이후 할 것들
+
+node.js 설치가 완료되면 해당 프로젝트를 다운받아서 새로 폴더를 만들어 안에 압축을 해제해주세요.  
+그 후 console창에서 npm install 명령어 사용시 해당 프로젝트에서 사용한 module들이 설치됩니다.  
+그후 database 설정을 진행해주세요.  
 ```
 server/routes/database/config.js
 ```
 해당 경로에 있는 Database User 및 Database Password 수정 (되도록이면 특정 table 읽기 권한만 가지게 하면 좋음)
+
+마지막으로 설정이 끝났으면 npm start 명령어로 시작할 수 있습니다.  
 
 ## 사이트 접속 포트
 ```
