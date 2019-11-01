@@ -2,7 +2,7 @@
 [![GitHub license](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](https://raw.githubusercontent.com/Asyunelus/PriconneSite/master/LICENSE)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/alerts/)  
-[![Contributors](https://img.shields.io/github/contributors/Asyunelus/PriconneSite)]
+[![Contributors](https://img.shields.io/github/contributors/Asyunelus/PriconneSite)](https://github.com/Asyunelus/PriconneSite/graphs/contributors)
 [![Commit Activity](https://img.shields.io/github/commit-activity/m/Asyunelus/PriconneSite)]
 Priconne Clanbattle Website (React + Express.js)
 
