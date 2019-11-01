@@ -1,5 +1,5 @@
 # PriconneClanBattle
-[![Version](https://img.shields.io/github/v/release/Asyunelus/PriconneSite.svg?include_prereleases)](https://github.com/Asyunelus/PriconneSite)
+[![Version](https://img.shields.io/github/v/release/Asyunelus/PriconneSite.svg?include_prereleases)](https://github.com/Asyunelus/PriconneSite/releases)
 [![GitHub license](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://raw.githubusercontent.com/Asyunelus/PriconneSite/master/LICENSE)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/alerts/)  
@@ -37,7 +37,7 @@ sudo apt-get install npm
 
 ### Node.js 설치 이후 할 것들
 
-node.js 설치가 완료되면 해당 프로젝트를 다운받아서 새로 폴더를 만들어 안에 압축을 해제해주세요.  
+node.js 설치가 완료되면 [해당 프로젝트를 다운](https://github.com/Asyunelus/PriconneSite/releases)받아서 새로 폴더를 만들어 안에 압축을 해제해주세요.  
 그 후 console창에서 npm install 명령어 사용시 해당 프로젝트에서 사용한 module들이 설치됩니다.  
 그후 database 설정을 진행해주세요.  
 ```
