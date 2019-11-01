@@ -1,5 +1,6 @@
 # PriconneClanBattle
 [![GitHub license](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](https://raw.githubusercontent.com/Asyunelus/PriconneSite/master/LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/Asyunelus/PriconneSite)](https://github.com/Asyunelus/PriconneSite)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/alerts/)  
 [![Contributors](https://img.shields.io/github/contributors/Asyunelus/PriconneSite)](https://github.com/Asyunelus/PriconneSite/graphs/contributors)
@@ -8,6 +9,7 @@
 [![Build Status](https://travis-ci.org/Asyunelus/PriconneSite.svg?branch=master)](https://travis-ci.org/Asyunelus/PriconneSite)
 [![Coverage Status](https://coveralls.io/repos/github/Asyunelus/PriconneSite/badge.svg?branch=master)](https://coveralls.io/github/Asyunelus/PriconneSite?branch=master)
 [![Github Downlaod Total](https://img.shields.io/github/downloads/Asyunelus/PriconneSite/total)](https://github.com/Asyunelus/PriconneSite/releases)
+[![Github Fork](https://img.shields.io/github/forks/Asyunelus/PriconneSite?label=Fork)](https://github.com/Asyunelus/PriconneSite)
   
 Priconne Clanbattle Website (React + Express.js)
 
