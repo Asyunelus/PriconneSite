@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 const api = require('./routes/index');
 const rateLimit = require('express-rate-limit');

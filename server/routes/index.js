@@ -1,8 +1,8 @@
 const express = require('express');
 
-var mysql      = require('mysql');
-var dbconfig   = require('./database/config.js');
-var conn = mysql.createConnection(dbconfig);
+//var mysql      = require('mysql');
+//var dbconfig   = require('./database/config.js');
+//var conn = mysql.createConnection(dbconfig);
 
 const router = express.Router();
 
