@@ -7,7 +7,7 @@
 [![Last Commit](https://img.shields.io/github/last-commit/Asyunelus/PriconneSite)](https://github.com/Asyunelus/PriconneSite/commits/master)
 [![Build Status](https://travis-ci.org/Asyunelus/PriconneSite.svg?branch=master)](https://travis-ci.org/Asyunelus/PriconneSite)
 [![Coverage Status](https://coveralls.io/repos/github/Asyunelus/PriconneSite/badge.svg?branch=master)](https://coveralls.io/github/Asyunelus/PriconneSite?branch=master)
-[![Github Downlaod Total](https://img.shields.io/github/downloads/Asyunelus/PriconneSite/total)]
+[![Github Downlaod Total](https://img.shields.io/github/downloads/Asyunelus/PriconneSite/total)](https://github.com/Asyunelus/PriconneSite/releases)
   
 Priconne Clanbattle Website (React + Express.js)
 
