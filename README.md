@@ -1,6 +1,6 @@
 # PriconneClanBattle
 [![Version](https://img.shields.io/github/v/release/Asyunelus/PriconneSite.svg?include_prereleases)](https://github.com/Asyunelus/PriconneSite)
-[![GitHub license](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](https://raw.githubusercontent.com/Asyunelus/PriconneSite/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://raw.githubusercontent.com/Asyunelus/PriconneSite/master/LICENSE)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Asyunelus/PriconneSite.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Asyunelus/PriconneSite/alerts/)  
 [![Contributors](https://img.shields.io/github/contributors/Asyunelus/PriconneSite)](https://github.com/Asyunelus/PriconneSite/graphs/contributors)
@@ -20,6 +20,7 @@ Priconne Clanbattle Website (React + Express.js)
 0.2.xx 이하 버전 에서는 Database를 사용하지 않고 기본 화면 구성 Sample만 동작합니다.  
 0.8.xx 이하 버전에서는 관리자 페이지가 존재하지 않습니다.  
 0.9.xx 버전에서 관리자 페이지 및 관련 작업 완료시 1.0.00 버전으로 업데이트됩니다.  
+AGPL v3.0 라이센스를 사용하고 있습니다,
 
 ## 설치 방법
 먼저 node.js 설치를 진행합니다. (해당 부분은 인터넷에서 찾아보고 하셔도 무방합니다.)   
