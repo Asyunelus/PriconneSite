@@ -11,7 +11,7 @@
 Priconne Clanbattle Website (React + Express.js)
 
 ## 설치 방법
-먼저 node.js 설치를 진행합니다.  
+먼저 node.js 설치를 진행합니다. (해당 부분은 인터넷에서 찾아보고 하셔도 무방합니다.)   
 ### Windows
 [Nodejs.org에서 설치하기](https://nodejs.org/ko/download/)  
 다운받은 후 설치하시면 됩니다.  
@@ -31,7 +31,8 @@ node.js 설치가 완료되면 해당 프로젝트를 다운받아서 새로 폴
 ```
 server/routes/database/config.js
 ```
-해당 경로에 있는 Database User 및 Database Password 수정 (되도록이면 특정 table 읽기 권한만 가지게 하면 좋음)
+해당 경로에 있는 Database User 및 Database Password 수정을 진행합니다. (되도록이면 특정 table 읽기 권한만 가지게 하면 좋음)
+추가적으로 sql 폴더 안에 있는 Mysql 쿼리문을 직접 쿼리해주시면 각종 테이블들이 자동으로 생성됩니다.  
 
 마지막으로 설정이 끝났으면 npm start 명령어로 시작할 수 있습니다.  
 
