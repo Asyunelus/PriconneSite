@@ -7,8 +7,15 @@
 [![Last Commit](https://img.shields.io/github/last-commit/Asyunelus/PriconneSite)](https://github.com/Asyunelus/PriconneSite/commits/master)
 [![Build Status](https://travis-ci.org/Asyunelus/PriconneSite.svg?branch=master)](https://travis-ci.org/Asyunelus/PriconneSite)
 [![Coverage Status](https://coveralls.io/repos/github/Asyunelus/PriconneSite/badge.svg?branch=master)](https://coveralls.io/github/Asyunelus/PriconneSite?branch=master)
+[![Github Downlaod Total](https://img.shields.io/github/downloads/Asyunelus/PriconneSite/total)]
   
 Priconne Clanbattle Website (React + Express.js)
+
+## 주의사항
+버전이 1.0.00 보다 작은 0.x.xx일 경우 베타버전입니다.  
+0.2.xx 이하 버전 에서는 Database를 사용하지 않고 기본 화면 구성 Sample만 동작합니다.  
+0.8.xx 이하 버전에서는 관리자 페이지가 존재하지 않습니다.  
+0.9.xx 버전에서 관리자 페이지 및 관련 작업 완료시 1.0.00 버전으로 업데이트됩니다.  
 
 ## 설치 방법
 먼저 node.js 설치를 진행합니다. (해당 부분은 인터넷에서 찾아보고 하셔도 무방합니다.)   
