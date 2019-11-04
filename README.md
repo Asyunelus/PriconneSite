@@ -16,7 +16,7 @@
 Priconne Clanbattle Website (React + Express.js)
 
 ## 개발 목표
-Code Quality를 A 이상 유지하면서 완성하는것이 목표.  
+Code Quality를 A등급 이상 유지하면서 완성하는것이 목표.  
 기본적인 클랜배틀 시트 역할을 대체할 수 있을 정도까지 완성하는게 목표.  
 클배 타격로그만 작성해도 개인 로그 및 각종 통계를 낼 수 있게끔 편한 기능을 제공하는게 목표.  
 
