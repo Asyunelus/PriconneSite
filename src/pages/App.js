@@ -15,9 +15,27 @@ import { Container } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 
+
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import HomeIcon from '@material-ui/icons/Home';
+
+//Icons : https://material-ui.com/components/material-icons/
+
 import SearchBox from "./SearchBox"
 
 const useStyles = makeStyles(theme => ({
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
   root: {
     flexGrow: 1,
   },
@@ -100,6 +118,42 @@ ElevationScroll.propTypes = {
 export default function App(props) {
   const classes = useStyles();
   
+  const [state, setState] = React.useState({
+    top: false
+  });
+
+  const toggleDrawer = (side, open) => event => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [side]: open });
+  };
+
+  const sideList = side => (
+    <div
+      className={classes.list}
+      role="presentation"
+      onClick={toggleDrawer(side, false)}
+      onKeyDown={toggleDrawer(side, false)}
+    >
+      <List>
+        <ListItem button key="Home" component="a" href="./">
+          <ListItemIcon><HomeIcon /></ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button key="Notice" component="a" href="./notice">
+          <ListItemIcon><InboxIcon /></ListItemIcon>
+          <ListItemText primary="Notice" />
+        </ListItem>
+      </List>
+      <Divider />
+    </div>
+  );
+
   return (
     <div className={classes.root}>
       <React.Fragment>
@@ -108,6 +162,7 @@ export default function App(props) {
           <AppBar position="fixed">
             <Toolbar>
               <IconButton
+                onClick={toggleDrawer('left', true)}
                 edge="start"
                 className={classes.menuButton}
                 color="inherit"
@@ -129,6 +184,9 @@ export default function App(props) {
         </ElevationScroll>
         <Toolbar/>
         <Container>
+          <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+            {sideList('left')}
+          </Drawer>
           <Box>
             {props.children}
           </Box>
