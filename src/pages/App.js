@@ -24,10 +24,13 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import HomeIcon from '@material-ui/icons/Home';
-
-//Icons : https://material-ui.com/components/material-icons/
+import EqualizerIcon from '@material-ui/icons/Equalizer';
+import TimerIcon from '@material-ui/icons/Timer';
 
 import SearchBox from "./SearchBox"
+//Icons : https://material-ui.com/components/material-icons/
+
+let domain = "http://localhost:3000";
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -138,16 +141,27 @@ export default function App(props) {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <ListItem button key="Home" component="a" href="./">
+        <ListItem button key="Home" component="a" href={domain}>
           <ListItemIcon><HomeIcon /></ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
       </List>
       <Divider />
       <List>
-        <ListItem button key="Notice" component="a" href="./notice">
+        <ListItem button key="Notice" component="a" href={domain + "/notice"}>
           <ListItemIcon><InboxIcon /></ListItemIcon>
           <ListItemText primary="Notice" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button key="Analysis" component="a" href={domain + "/analysis"}>
+          <ListItemIcon><EqualizerIcon /></ListItemIcon>
+          <ListItemText primary="Clanbattle Analysis" />
+        </ListItem>
+        <ListItem button key="Tactic" component="a" href={domain + "/tactic"}>
+          <ListItemIcon><TimerIcon /></ListItemIcon>
+          <ListItemText primary="Clanbattle Tactic" />
         </ListItem>
       </List>
       <Divider />

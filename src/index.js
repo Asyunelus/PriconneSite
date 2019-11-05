@@ -1,26 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './index.css';
 
 import App from './pages/App';
 import Main from './pages/Main';
 import UserData from './pages/UserData';
 import Notice from './pages/Notice';
+import NotFound from './pages/NotFound';
 
 ReactDOM.render(
     <Router>
       <div>
         <Route path="/">
-            <App/>
-          <Route path="/main">
-              <Main/>
-          </Route>
-          <Route path="/notice">
-              <Notice/>
-          </Route>
-          <Route path="/user/:pid" component={UserData}>
-          </Route>
+          <App/>
+          <Switch>
+            <Route path="/main">
+                <Main/>
+            </Route>
+            <Route path="/notice">
+                <Notice/>
+            </Route>
+            <Route path="/user/:pid" component={UserData}>
+            </Route>
+            <Route component={NotFound}>
+            </Route>
+          </Switch>
         </Route>
       </div>
     </Router>,
