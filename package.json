@@ -26,7 +26,7 @@
     "start:server": "node ./server/app.js",
     "build": "react-scripts build",
     "test": "mocha",
-    "cover": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
+    "cover": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "eject": "react-scripts eject"
   },
