@@ -14,6 +14,40 @@ router.get('/version', (req, res) => res.json({
     patchStr:'P001'
 }));
 
+router.get('/notice/:Page', (req, res) => {
+    var page = req.params.Page || 1;
+    var resultData = {
+        count: 10,
+        notice: [
+            {no: 10, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 9, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 8, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 7, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 6, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 5, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 4, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 3, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 2, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+            {no: 1, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
+        ]
+    }
+
+    return res.json(resultData);
+});
+
+router.get('/board/:NoticeID', (req, res) => {
+    var nid = req.params.NoticeID;
+    var resultData = {
+        no: nid,
+        title: "Null",
+        text: "Null",
+        author: "Null",
+        writeday: "1970.01.01"
+    };
+
+    return res.json(resultData);
+});
+
 router.get('/user/:UserPID', (req, res) => {
     var upid = req.params.UserPID;
     if (upid.length != 12 || isNaN(upid)) {

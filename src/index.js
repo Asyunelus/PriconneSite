@@ -7,6 +7,7 @@ import App from './pages/App';
 import Main from './pages/Main';
 import UserData from './pages/UserData';
 import Notice from './pages/Notice';
+import NoticeBoard from './pages/NoticeBoard';
 import NotFound from './pages/NotFound';
 
 ReactDOM.render(
@@ -20,6 +21,8 @@ ReactDOM.render(
             </Route>
             <Route path="/notice">
                 <Notice/>
+            </Route>
+            <Route path="/board/:nid" component={NoticeBoard}>
             </Route>
             <Route path="/user/:pid" component={UserData}>
             </Route>

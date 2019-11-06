@@ -5,7 +5,12 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Title from './components/Title.js'
+//import Title from './components/Title.js'
+//import Table from '@material-ui/core/Table';
+//import TableBody from '@material-ui/core/TableBody';
+//import TableCell from '@material-ui/core/TableCell';
+//import TableRow from '@material-ui/core/TableRow';
+//import { TableHead } from '@material-ui/core';
 
 const useStyles = theme => ({
     root: {
@@ -30,11 +35,27 @@ const useStyles = theme => ({
     tablecell: {
         fontWeight: 'bold',
     },
+    tablerow: {
+        '&:hover': {
+            background: "#ddd",
+        }
+    },
 });
 
-class NotFound extends Component {
+class Notice extends Component {
+    state = {nid:this.props.match.params.nid, loaded: false, page:1, results:[]};
+
+    componentDidMount() {
+        fetch(`/api/board/${this.state.nid}`)
+        .then(res => res.json())
+        .then(results => {
+            this.setState({results})
+            this.setState({loaded: true});
+        })
+    }
     render() {
         const { classes } = this.props;
+        //var data = this.state.results;
         return (
             <div className={classes.root}>
                 <main className={classes.content}>
@@ -43,8 +64,6 @@ class NotFound extends Component {
                             <Grid item xs={12} md={12}>
                                 <Card className={classes.card_1}>
                                     <CardContent>
-                                        <Title>404 Not Found!</Title>
-                                        <Title>없는 페이지입니다.</Title>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -57,4 +76,4 @@ class NotFound extends Component {
 }
 
 
-export default withStyles(useStyles)(NotFound);
+export default withStyles(useStyles)(Notice);
