@@ -14,7 +14,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Tooltip from '@material-ui/core/Tooltip';
 import TablePagination from '@material-ui/core/TablePagination';
-import Title from './components/Title.js'
+import Title from './components/SubTitle.js'
 
 const useStyles = theme => ({
     root: {

@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route path="/">
           <App/>
           <Switch>
-            <Route path="/main">
+            <Route path="/" exact={true}>
                 <Main/>
             </Route>
             <Route path="/notice">

@@ -6,7 +6,7 @@ const rateLimit = require('express-rate-limit');
 
 const apiLimiter = rateLimit({
     windowMS: 30 * 1000,
-    max: 20
+    max: 10
 });
 
 app.use(bodyParser.json());

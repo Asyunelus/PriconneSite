@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Title from './components/Title.js'
+import Title from './components/SubTitle.js'
 
 const useStyles = theme => ({
     root: {
