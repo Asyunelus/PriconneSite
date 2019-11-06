@@ -47,7 +47,12 @@ sudo apt-get install npm
 ### Node.js 설치 이후 할 것들
 
 node.js 설치가 완료되면 [해당 프로젝트를 다운](https://github.com/Asyunelus/PriconneSite/releases)받아서 새로 폴더를 만들어 안에 압축을 해제해주세요.  
-그 후 console창에서 npm install 명령어 사용시 해당 프로젝트에서 사용한 module들이 설치됩니다.  
+그 후 console창에서 다음 명령어 사용시 해당 프로젝트에서 사용한 module들이 설치됩니다.  
+```
+npm ci
+```
+위 명령어가 진행되지 않을 시 npm version이 5.7.1 미만인 경우이므로 npm 버전을 업데이트 해주십시오.  
+
 그후 database 설정을 진행해주세요.  
 ```
 server/routes/database/config.js
