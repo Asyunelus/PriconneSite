@@ -189,4 +189,4 @@ router.get('/user/:CBYYYYMM/:UserPID', (req, res) => {
 
 router.get('/*', (req, res) => res.json({data:'null'}));
 
-module.exports = router
+module.exports = router;
