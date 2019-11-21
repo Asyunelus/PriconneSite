@@ -33,33 +33,3 @@ AGPL v3.0 라이센스는 GPL v3.0 라이센스와 다르게 웹 사이트로 �
 
 ## 설치 방법
 [자세한 내용은 위키를 참고해주세요.](https://github.com/Asyunelus/PriconneSite/wiki)
-
-## Docker를 사용한 설치 (선택)
-docker 사용시 장점
-linux 지식이없어도 명령어 한줄로 쉽게 사이트 구축가능
-의존성 패키지를 전부 설치 해두어서 따로 설치 하지않아도됨
-(개발자분이 요구하는 node.js 및 npm 등을 설치 하지않아도 되므로 지식이 없어도 구축가능)
-### Centos
-
-```
-yum -y update
-yum -y install docker docker-registry
-
-systemctl enable docker
-systemctl start docker
-```
-### #Ubuntu
-
-```
-apt-get update
-apt-get install docker
-```
-
-(구글에 docker 설치 검색시 좀더 쉽게 설치가능)
-
-### Docker 설치 이후 세팅법
-```
-docker run -d -p 3000:3000 --name priconnect --restart=always activefile/priconnect:0.1.02
-```
-
-추후 내용 및 업데이트와 DB 관련은 개발자분이 추가 완료시 테스트후 내용 추가예정
