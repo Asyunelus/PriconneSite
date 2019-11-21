@@ -30,7 +30,7 @@ AGPL v3.0 라이센스를 사용하고 있습니다.
 AGPL v3.0 라이센스는 GPL v3.0 라이센스와 다르게 웹 사이트로 운용을 해도 배포한 것으로 간주가 됩니다.  
 만약, 소스코드를 수정하여 사용할 경우 해당 수정된 소스코드를 포함하여 전체 코드를 배포하여야 됩니다.  
 (config.js와 같이 설정파일 제외)  
-관련 내용은 위키에서 설명하였습니다.  
+관련 내용은 [[AGPL 라이센스에 대해서 정확히 알고 싶습니다!]](https://github.com/Asyunelus/PriconneSite/wiki#agpl-%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%A0%95%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EC%8B%B6%EC%8A%B5%EB%8B%88%EB%8B%A4) 부분을 참고해주세요.
 
 ## 설치 방법 및 주의사항
 [자세한 내용은 위키를 참고해주세요.](https://github.com/Asyunelus/PriconneSite/wiki)
