@@ -7,6 +7,8 @@ import App from './pages/App';
 import Main from './pages/Main';
 import UserData from './pages/UserData';
 import Notice from './pages/Notice';
+import AnalysisMain from './pages/AnalysisMain';
+import Analysis from './pages/Analysis';
 import NoticeBoard from './pages/NoticeBoard';
 import NotFound from './pages/NotFound';
 
@@ -22,9 +24,14 @@ ReactDOM.render(
             <Route path="/notice">
                 <Notice/>
             </Route>
+            <Route path="/analysis">
+                <AnalysisMain/>
+            </Route>
+            <Route path="/analysis/:cbdate" component={Analysis}>
+            </Route>
             <Route path="/board/:nid" component={NoticeBoard}>
             </Route>
-            <Route path="/user/:pid" component={UserData}>
+            <Route path="/user/:cbdate/:pid" component={UserData}>
             </Route>
             <Route component={NotFound}>
             </Route>

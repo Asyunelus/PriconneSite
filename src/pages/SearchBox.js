@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DateFormat from "dateformat";
 import PropTypes from 'prop-types';
 import { fade, withStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
@@ -61,7 +61,8 @@ class SearchBox extends React.Component {
     constructor(props) {
       super(props);
       
-      this.state = {value: ''};
+      var ndate = DateFormat(new Date(), "yyyymm");
+      this.state = {value: '', date: ndate};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -72,7 +73,7 @@ class SearchBox extends React.Component {
     }
   
     handleSubmit(event) {
-      window.location.assign("/user/"+this.state.value);
+      window.location.assign("/user/"+ this.state.date + "/" +this.state.value);
       event.preventDefault();
     }
   

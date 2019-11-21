@@ -5,7 +5,8 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-//import Title from './components/Title.js'
+import Title from './components/Title.js'
+import SubTitle from './components/SubTitle.js'
 //import Table from '@material-ui/core/Table';
 //import TableBody from '@material-ui/core/TableBody';
 //import TableCell from '@material-ui/core/TableCell';
@@ -42,16 +43,11 @@ const useStyles = theme => ({
     },
 });
 
-class Notice extends Component {
-    state = {nid:this.props.match.params.nid, loaded: false, results:[]};
+class Analysis extends Component {
+    state = {};
 
     componentDidMount() {
-        fetch(`/api/board/${this.state.nid}`)
-        .then(res => res.json())
-        .then(results => {
-            this.setState({results})
-            this.setState({loaded: true});
-        })
+        
     }
     render() {
         const { classes } = this.props;
@@ -64,9 +60,8 @@ class Notice extends Component {
                             <Grid item xs={12} md={12}>
                                 <Card className={classes.card_1}>
                                     <CardContent>
-                                    {this.state.loaded && (
-                                        <span>{this.state.results.text}</span>
-                                    )}
+                                        <Title>Priconne Clanbattle Analysis</Title>
+                                        <SubTitle>프린세스 커넥트 클랜배틀 통계입니다.</SubTitle>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -79,4 +74,4 @@ class Notice extends Component {
 }
 
 
-export default withStyles(useStyles)(Notice);
+export default withStyles(useStyles)(Analysis);

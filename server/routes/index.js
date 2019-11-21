@@ -17,6 +17,7 @@ router.get('/version', (req, res) => res.json({
 router.get('/notice/:Page', (req, res) => {
     var page = req.params.Page || 1;
     var resultData = {
+        page: page,
         count: 10,
         notice: [
             {no: 10, title: "Null", text: "Null", author: "Null", writeday: "1970.01.01"},
@@ -48,9 +49,49 @@ router.get('/board/:NoticeID', (req, res) => {
     return res.json(resultData);
 });
 
-router.get('/user/:UserPID', (req, res) => {
+router.get('/analysis/:CBYYYYMM', (req, res) => {
+    var date = req.params.CBYYYYMM;
+    if (date.length != 6 || isNaN(date)) {
+        return res.json({
+            pid:upid,
+            response_code:13,
+            response_description:'error: date is only 6 digits.'
+        });
+    }
+    //플레이어의 스코어, 기여도, 타격횟수
+    var PlayerList = {};
+    //전체 타격 정보
+    var AttackLog = {};
+    //클랜 순위
+    var CurrentRank = 0;
+    //전체 키무리점수
+    var CurrentScore = 0;
+    //전체 타격횟수
+    var CurrentAttack = 0;
+
+    var resultData = {
+        pid:upid,
+        response_code:1,
+        response_description:'succceed',
+        rank: CurrentRank,
+        score: CurrentScore,
+        attack: CurrentAttack,
+        attackhistory: AttackLog,
+        playerlist: PlayerList
+    };
+    return res.json(resultData);
+});
+
+router.get('/user/:CBYYYYMM/:UserPID', (req, res) => {
     var upid = req.params.UserPID;
-    if (upid.length != 12 || isNaN(upid)) {
+    var date = req.params.CBYYYYMM;
+    if (date.length != 6 || isNaN(date)) {
+        return res.json({
+            pid:upid,
+            response_code:13,
+            response_description:'error: date is only 6 digits.'
+        });
+    } else if (upid.length != 12 || isNaN(upid)) {
         return res.json({
             pid:upid,
             response_code:13,
@@ -144,5 +185,8 @@ router.get('/user/:UserPID', (req, res) => {
         return res.json(resultData);
     }
 });
+
+
+router.get('/*', (req, res) => res.json({data:'null'}));
 
 module.exports = router

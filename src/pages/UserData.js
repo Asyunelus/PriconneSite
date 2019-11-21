@@ -30,7 +30,7 @@ const useStyles = theme => ({
       overflow: 'auto',
     },
     tableWrapper: {
-      maxHeight: 440,
+      maxHeight: 325,
       overflow: 'auto',
     },
     title: {
@@ -43,12 +43,12 @@ const useStyles = theme => ({
 
   
 class UserData extends Component {
-    state = {pid:this.props.match.params.pid, results:[], page:0, rowsPerPage:10};
+    state = {date: this.props.match.params.cbdate, pid:this.props.match.params.pid, results:[], page:0, rowsPerPage:10};
 
     componentDidMount() {
-        const {pid} = this.state;
+        const {pid, date} = this.state;
 
-        fetch(`/api/user/${pid}`)
+        fetch(`/api/user/${date}/${pid}`)
         .then(res => res.json())
         .then(results => {
             this.setState({results})
@@ -86,11 +86,19 @@ class UserData extends Component {
                                                         <TableCell className={classes.tablecell} align="right"><NumberFormat value={data.damageall} displayType={'text'} thousandSeparator={true} suffix={' 데미지'} /></TableCell>
                                                     </TableRow>
                                                     <TableRow>
-                                                        <TableCell className={classes.tablecell} component="th" scope="row">키무라 점수</TableCell>
+                                                        <Tooltip title="인게임 배율이 적용된 점수입니다." placement="bottom">
+                                                            <TableCell className={classes.tablecell} component="th" scope="row">
+                                                                키무라 점수
+                                                            </TableCell>
+                                                        </Tooltip>
                                                         <TableCell className={classes.tablecell} align="right"><NumberFormat value={data.kimuraall} displayType={'text'} thousandSeparator={true} suffix={' 점'} /></TableCell>
                                                     </TableRow>
                                                     <TableRow>
-                                                        <TableCell className={classes.tablecell} component="th" scope="row">프팍 기여도</TableCell>
+                                                        <Tooltip title="인게임 배율이 아닌 보스 별 배율이 적용된 점수입니다." placement="bottom">
+                                                            <TableCell className={classes.tablecell} component="th" scope="row">
+                                                                프팍 기여도
+                                                            </TableCell>
+                                                        </Tooltip>
                                                         <TableCell className={classes.tablecell} align="right"><NumberFormat value={data.scoreall} displayType={'text'} thousandSeparator={true} suffix={' 점'} /></TableCell>
                                                     </TableRow>
                                                     <TableRow>

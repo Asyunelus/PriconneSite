@@ -15,6 +15,7 @@ import { Container } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 
+import DateFormat from "dateformat";
 
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -133,6 +134,8 @@ export default function App(props) {
     setState({ ...state, [side]: open });
   };
 
+  var ndate = DateFormat(new Date(), "yyyymm");
+
   const sideList = side => (
     <div
       className={classes.list}
@@ -155,9 +158,13 @@ export default function App(props) {
       </List>
       <Divider />
       <List>
+        <ListItem button key="Analysis" component="a" href={domain + "/analysis/" + ndate}>
+          <ListItemIcon><EqualizerIcon /></ListItemIcon>
+          <ListItemText primary="Current Analysis" />
+        </ListItem>
         <ListItem button key="Analysis" component="a" href={domain + "/analysis"}>
           <ListItemIcon><EqualizerIcon /></ListItemIcon>
-          <ListItemText primary="Clanbattle Analysis" />
+          <ListItemText primary="Analysis List" />
         </ListItem>
         <ListItem button key="Tactic" component="a" href={domain + "/tactic"}>
           <ListItemIcon><TimerIcon /></ListItemIcon>
