@@ -24,10 +24,10 @@ ReactDOM.render(
             <Route path="/notice">
                 <Notice/>
             </Route>
+            <Route path="/analysis/:cbdate" component={Analysis}>
+            </Route>
             <Route path="/analysis">
                 <AnalysisMain/>
-            </Route>
-            <Route path="/analysis/:cbdate" component={Analysis}>
             </Route>
             <Route path="/board/:nid" component={NoticeBoard}>
             </Route>

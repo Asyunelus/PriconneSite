@@ -49,11 +49,21 @@ router.get('/board/:NoticeID', (req, res) => {
     return res.json(resultData);
 });
 
-router.get('/analysis/:CBYYYYMM', (req, res) => {
-    var date = req.params.CBYYYYMM;
+router.get('/cbd', (req, res) => {
+    var ClanBattleList = [
+        {no: 1, turn: 8, cb: 201911, startDay: "2019.11.19", endDay: "2019.11.28"}
+    ];
+    var resultData = {
+        data: ClanBattleList
+    };
+    return res.json(resultData);
+});
+
+router.get('/analysis/:cbdate', (req, res) => {
+    var date = req.params.cbdate;
     if (date.length != 6 || isNaN(date)) {
         return res.json({
-            pid:upid,
+            cb: date,
             response_code:13,
             response_description:'error: date is only 6 digits.'
         });
@@ -70,9 +80,12 @@ router.get('/analysis/:CBYYYYMM', (req, res) => {
     var CurrentAttack = 0;
 
     var resultData = {
-        pid:upid,
         response_code:1,
         response_description:'succceed',
+        th: 8,
+        cb: 201911,
+        startDay: "2019.11.19",
+        endDay: "2019.11.28",
         rank: CurrentRank,
         score: CurrentScore,
         attack: CurrentAttack,

@@ -5,13 +5,12 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Title from './components/Title.js'
-import SubTitle from './components/SubTitle.js'
-//import Table from '@material-ui/core/Table';
-//import TableBody from '@material-ui/core/TableBody';
-//import TableCell from '@material-ui/core/TableCell';
-//import TableRow from '@material-ui/core/TableRow';
-//import { TableHead } from '@material-ui/core';
+import Title from './components/SubTitle.js'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import { TableHead } from '@material-ui/core';
 
 const useStyles = theme => ({
     root: {
@@ -44,14 +43,24 @@ const useStyles = theme => ({
 });
 
 class AnalysisMain extends Component {
-    state = {};
+    state = {loaded: false, results:[]};
 
     componentDidMount() {
-        
+        fetch(`/api/cbd`)
+        .then(res => res.json())
+        .then(results => {
+            this.setState({results})
+            this.setState({loaded: true});
+        })
     }
+
+    onTablerowClicked = (no) => {
+        document.location = "./analysis/" + no;
+    }
+
     render() {
         const { classes } = this.props;
-        //var data = this.state.results;
+        var data = this.state.results;
         return (
             <div className={classes.root}>
                 <main className={classes.content}>
@@ -61,7 +70,24 @@ class AnalysisMain extends Component {
                                 <Card className={classes.card_1}>
                                     <CardContent>
                                         <Title>Priconne Clanbattle Analysis</Title>
-                                        <SubTitle>프린세스 커넥트 클랜배틀 통계입니다.</SubTitle>
+                                        <Table className={classes.table} aria-label="simple table">
+                                            <TableHead>
+                                                <TableRow>
+                                                    <TableCell className={classes.tablecell} component="th" scope="row">No.</TableCell>
+                                                    <TableCell className={classes.tablecell} align="right">클랜배틀 회차</TableCell>
+                                                    <TableCell className={classes.tablecell} align="right">기간</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody>
+                                                {this.state.loaded && data.data.map((row) => (
+                                                    <TableRow className={classes.tablerow} key={row.no} onClick={() => this.onTablerowClicked(row.cb)} >
+                                                        <TableCell className={classes.tablecell} component="th" scope="row">{row.no}</TableCell>
+                                                        <TableCell className={classes.tablecell} align="right">제 {row.turn}회 클랜배틀</TableCell>
+                                                        <TableCell className={classes.tablecell} align="right">{row.startDay} ~ {row.endDay}</TableCell>
+                                                    </TableRow>
+                                                ))}
+                                            </TableBody>
+                                        </Table>
                                     </CardContent>
                                 </Card>
                             </Grid>

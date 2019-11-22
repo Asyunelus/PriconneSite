@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Title from './components/Title.js'
-import SubTitle from './components/SubTitle.js'
 //import Table from '@material-ui/core/Table';
 //import TableBody from '@material-ui/core/TableBody';
 //import TableCell from '@material-ui/core/TableCell';
@@ -44,32 +43,76 @@ const useStyles = theme => ({
 });
 
 class Analysis extends Component {
-    state = {};
+    state = {date: this.props.match.params.cbdate, loaded: false, results:[]};
 
     componentDidMount() {
-        
+        fetch(`/api/analysis/${this.state.date}`)
+        .then(res => res.json())
+        .then(results => {
+            this.setState({results})
+            this.setState({loaded: true});
+        })
     }
     render() {
         const { classes } = this.props;
-        //var data = this.state.results;
-        return (
-            <div className={classes.root}>
-                <main className={classes.content}>
-                    <Container maxWidth="lg" className={classes.container}>
-                        <Grid container spacing={4}>
-                            <Grid item xs={12} md={12}>
-                                <Card className={classes.card_1}>
-                                    <CardContent>
-                                        <Title>Priconne Clanbattle Analysis</Title>
-                                        <SubTitle>프린세스 커넥트 클랜배틀 통계입니다.</SubTitle>
-                                    </CardContent>
-                                </Card>
+        var data = this.state.results;
+        if (this.state.loaded) {
+            if (data.response_code !== 1) {
+                return (
+                    <div className={classes.root}>
+                        <main className={classes.content}>
+                            <Container maxWidth="lg" className={classes.container}>
+                                <Grid container spacing={4}>
+                                    <Grid item xs={12} md={12}>
+                                        <Card className={classes.card_1}>
+                                            <CardContent>
+                                                <Title>로딩 실패...</Title>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                </Grid>
+                            </Container>
+                        </main>
+                    </div>
+                );
+            }
+            return (
+                <div className={classes.root}>
+                    <main className={classes.content}>
+                        <Container maxWidth="lg" className={classes.container}>
+                            <Grid container spacing={4}>
+                                <Grid item xs={12} md={12}>
+                                    <Card className={classes.card_1}>
+                                        <CardContent>
+                                            <Title>제 {data.th}회 클랜배틀 통계</Title>
+                                            
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </Container>
-                </main>
-            </div>
-        );
+                        </Container>
+                    </main>
+                </div>
+            );
+        } else {
+            return (
+                <div className={classes.root}>
+                    <main className={classes.content}>
+                        <Container maxWidth="lg" className={classes.container}>
+                            <Grid container spacing={4}>
+                                <Grid item xs={12} md={12}>
+                                    <Card className={classes.card_1}>
+                                        <CardContent>
+                                            <Title>통계를 불러오는중...</Title>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            </Grid>
+                        </Container>
+                    </main>
+                </div>
+            );
+        }
     }
 }
 
